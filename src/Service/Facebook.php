@@ -19,7 +19,7 @@ class Facebook
      * @Custom
      * @return void
      */
-    public function doStuff()
+    public function doStuff(): void
     {
         echo "Facebook stuff!";
     }
@@ -28,7 +28,7 @@ class Facebook
      * @param int $amount
      * @return void
      */
-    public function depositMoney($amount)
+    public function depositMoney(int $amount): void
     {
         $this->amount += $amount;
     }
@@ -37,7 +37,7 @@ class Facebook
      * @param int $amount
      * @return void
      */
-    public function withdrawMoney($amount)
+    public function withdrawMoney(int $amount): void
     {
         $this->amount -= $amount;
     }

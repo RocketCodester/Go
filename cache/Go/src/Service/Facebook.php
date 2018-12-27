@@ -17,7 +17,6 @@ class Facebook__AopProxied
 
     /**
      * @Custom
-     * @return void
      */
     public function doStuff()
     {
@@ -26,18 +25,16 @@ class Facebook__AopProxied
 
     /**
      * @param int $amount
-     * @return void
      */
-    public function depositMoney($amount)
+    public function depositMoney(int $amount)
     {
         $this->amount += $amount;
     }
 
     /**
      * @param int $amount
-     * @return void
      */
-    public function withdrawMoney($amount)
+    public function withdrawMoney(int $amount)
     {
         $this->amount -= $amount;
     }

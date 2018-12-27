@@ -16,27 +16,27 @@ class Facebook extends Facebook__AopProxied implements \Go\Aop\Proxy
     
     /**
      * @Custom
-     * @return void
+     * @return bool|null
      */
-    public function doStuff()
+    public function doStuff(): ?bool
     {
         return self::$__joinPoints['method:doStuff']->__invoke($this);
     }
-    
+
     /**
      * @param int $amount
-     * @return void
+     * @return bool|null
      */
-    public function depositMoney($amount)
+    public function depositMoney(int $amount): ?bool
     {
         return self::$__joinPoints['method:depositMoney']->__invoke($this, array($amount));
     }
-    
+
     /**
      * @param int $amount
-     * @return void
+     * @return bool|null
      */
-    public function withdrawMoney($amount)
+    public function withdrawMoney(int $amount): ?bool
     {
         return self::$__joinPoints['method:withdrawMoney']->__invoke($this, array($amount));
     }

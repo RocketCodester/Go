@@ -1,5 +1,7 @@
 <?php
-// public/index.php
+
+namespace PublicFolder;
+
 include __DIR__ . '/../vendor/autoload.php'; // use composer's autoloader
 
 // Initialize an application aspect container
