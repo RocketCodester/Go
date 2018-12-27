@@ -3,12 +3,8 @@
 namespace Stark\AOP\Aspect;
 
 use Go\Aop\Aspect;
-use Go\Aop\Intercept\FieldAccess;
-use Go\Aop\Intercept\MethodInvocation;
-use Go\Lang\Annotation\After;
-use Go\Lang\Annotation\Before;
-use Go\Lang\Annotation\Around;
-use Go\Lang\Annotation\Pointcut;
+use Go\Aop\Intercept\{FieldAccess, MethodInvocation};
+use Go\Lang\Annotation\{After, Before, Around, Pointcut};
 
 /**
  * Monitor aspect
@@ -20,8 +16,9 @@ class Monitor implements Aspect
      *
      * @param MethodInvocation $invocation Invocation
      * @Before("@annotation(Stark\Annotation\Custom)")
+     * @return void
      */
-    public function beforeMethodExecution(MethodInvocation $invocation)
+    public function beforeMethodExecution(MethodInvocation $invocation): void
     {
         $obj = $invocation->getThis();
         echo 'Calling Before Interceptor for method: ',
