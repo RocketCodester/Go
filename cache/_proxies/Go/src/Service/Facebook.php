@@ -13,7 +13,7 @@ class Facebook extends Facebook__AopProxied implements \Go\Aop\Proxy
      * Property was created automatically, do not change it manually
      */
     private static $__joinPoints = array();
-    
+
     /**
      * @Custom
      * @return bool|null
@@ -40,23 +40,23 @@ class Facebook extends Facebook__AopProxied implements \Go\Aop\Proxy
     {
         return self::$__joinPoints['method:withdrawMoney']->__invoke($this, array($amount));
     }
-    
+
 }
 \Go\Proxy\ClassProxy::injectJoinPoints('Stark\Service\Facebook',array (
-  'method' => 
-  [
-    'doStuff' => 
-    [
-      0 => 'advisor.Stark\\AOP\\Aspect\\Monitor->beforeMethodExecution',
-      1 => 'advisor.Stark\\AOP\\Aspect\\Logging->beforeMethodExecution',
-    ],
-    'depositMoney' => 
-    [
-      0 => 'advisor.Stark\\AOP\\Aspect\\Logging->beforeMethodExecution',
-    ],
-    'withdrawMoney' => 
-    [
-      0 => 'advisor.Stark\\AOP\\Aspect\\Logging->beforeMethodExecution',
-    ],
-  ],
+    'method' =>
+        [
+            'doStuff' =>
+                [
+                    0 => 'advisor.Stark\\AOP\\Aspect\\Monitor->beforeMethodExecution',
+                    1 => 'advisor.Stark\\AOP\\Aspect\\Logging->beforeMethodExecution',
+                ],
+            'depositMoney' =>
+                [
+                    0 => 'advisor.Stark\\AOP\\Aspect\\Logging->beforeMethodExecution',
+                ],
+            'withdrawMoney' =>
+                [
+                    0 => 'advisor.Stark\\AOP\\Aspect\\Logging->beforeMethodExecution',
+                ],
+        ],
 ));
