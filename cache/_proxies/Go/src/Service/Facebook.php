@@ -44,19 +44,19 @@ class Facebook extends Facebook__AopProxied implements \Go\Aop\Proxy
 }
 \Go\Proxy\ClassProxy::injectJoinPoints('Stark\Service\Facebook',array (
   'method' => 
-  array (
+  [
     'doStuff' => 
-    array (
+    [
       0 => 'advisor.Stark\\AOP\\Aspect\\Monitor->beforeMethodExecution',
       1 => 'advisor.Stark\\AOP\\Aspect\\Logging->beforeMethodExecution',
-    ),
+    ],
     'depositMoney' => 
-    array (
+    [
       0 => 'advisor.Stark\\AOP\\Aspect\\Logging->beforeMethodExecution',
-    ),
+    ],
     'withdrawMoney' => 
-    array (
+    [
       0 => 'advisor.Stark\\AOP\\Aspect\\Logging->beforeMethodExecution',
-    ),
-  ),
+    ],
+  ],
 ));
