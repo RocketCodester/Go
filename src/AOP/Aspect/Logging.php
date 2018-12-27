@@ -1,5 +1,5 @@
 <?php
-// src/AOP/Aspect/Monitor.php
+// src/AOP/Aspect/Logging.php
 namespace Stark\AOP\Aspect;
 
 use Go\Aop\Aspect;
@@ -9,26 +9,26 @@ use Go\Lang\Annotation\After;
 use Go\Lang\Annotation\Before;
 use Go\Lang\Annotation\Around;
 use Go\Lang\Annotation\Pointcut;
+use Monolog\Logger;
 
 /**
  * Monitor aspect
  */
-class Monitor implements Aspect
+class Logging implements Aspect
 {
+    /**
+     * @var Logger
+     */
+    private $logger;
     /**
      * Method that will be called before real method
      *
      * @param MethodInvocation $invocation Invocation
-     * @Before("@annotation(Stark\Annotation\Custom)")
+     * @Before("execution(public Stark\Service\Facebook->*(*))")
      */
     public function beforeMethodExecution(MethodInvocation $invocation)
     {
-        $obj = $invocation->getThis();
-        echo 'Calling Before Interceptor for method: ',
-        is_object($obj) ? get_class($obj) : $obj,
-        $invocation->getMethod()->isStatic() ? '::' : '->',
-        $invocation->getMethod()->getName(),
-        '()',
-        "<br>\n";
+        $logger = new Logger('my_app');
+        $logger->info("Executing " . $invocation->getMethod()->name, $invocation->getArguments());
     }
 }

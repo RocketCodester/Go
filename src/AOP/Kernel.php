@@ -4,6 +4,7 @@ namespace Stark\AOP;
 
 use Go\Core\AspectKernel;
 use Go\Core\AspectContainer;
+use Stark\AOP\Aspect\Logging;
 use Stark\AOP\Aspect\Monitor;
 
 class Kernel extends AspectKernel
@@ -18,5 +19,6 @@ class Kernel extends AspectKernel
     protected function configureAop(AspectContainer $container)
     {
         $container->registerAspect(new Monitor());
+        $container->registerAspect(new Logging());
     }
 }

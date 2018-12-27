@@ -11,3 +11,5 @@ $applicationAspectKernel->init([
 ]);
 $fb = new \Stark\Service\Facebook();
 $fb->doStuff();
+$fb->depositMoney(5);
+$fb->withdrawMoney(2);
