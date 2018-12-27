@@ -1,6 +1,7 @@
 <?php
 namespace Stark\Service;
 
+use Stark\Annotation\Custom as Custom;
 
 class Facebook extends Facebook__AopProxied implements \Go\Aop\Proxy
 {
@@ -10,7 +11,9 @@ class Facebook extends Facebook__AopProxied implements \Go\Aop\Proxy
      */
     private static $__joinPoints = array();
     
-    
+    /**
+     * @Custom
+     */
     public function doStuff()
     {
         return self::$__joinPoints['method:doStuff']->__invoke($this);
