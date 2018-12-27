@@ -1,5 +1,5 @@
 <?php
-// src/AOP/Aspect/Monitor.php
+
 namespace Stark\AOP\Aspect;
 
 use Go\Aop\Aspect;
@@ -20,8 +20,9 @@ class Monitor implements Aspect
      *
      * @param MethodInvocation $invocation Invocation
      * @Before("@annotation(Stark\Annotation\Custom)")
+     * @return void
      */
-    public function beforeMethodExecution(MethodInvocation $invocation)
+    public function beforeMethodExecution(MethodInvocation $invocation): void
     {
         $obj = $invocation->getThis();
         echo 'Calling Before Interceptor for method: ',
