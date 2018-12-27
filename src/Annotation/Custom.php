@@ -1,5 +1,5 @@
 <?php
-// src/Annotation/Custom.php
+
 namespace Stark\Annotation;
 
 use Doctrine\Common\Annotations\Annotation;

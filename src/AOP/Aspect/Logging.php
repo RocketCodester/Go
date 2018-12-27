@@ -1,5 +1,5 @@
 <?php
-// src/AOP/Aspect/Logging.php
+
 namespace Stark\AOP\Aspect;
 
 use Go\Aop\Aspect;
@@ -25,8 +25,9 @@ class Logging implements Aspect
      *
      * @param MethodInvocation $invocation Invocation
      * @Before("execution(public Stark\Service\Facebook->*(*))")
+     * @return void
      */
-    public function beforeMethodExecution(MethodInvocation $invocation)
+    public function beforeMethodExecution(MethodInvocation $invocation): void
     {
         $logger = new Logger('my_app');
         $logger->info("Executing " . $invocation->getMethod()->name, $invocation->getArguments());
